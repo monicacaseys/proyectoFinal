@@ -14,10 +14,8 @@ body {
 
 
 .box {
-    width: 300px;
-    height: 200px;
-    background-color: lightgray;
-    border: 1px solid gray;
+    width: 600px;
+    height: 400px;
     padding: 20px;
     margin: 10px;
     text-align: center;
@@ -26,19 +24,34 @@ body {
     justify-content: center;
     align-items: center;
 }
+.box:hover {
+    cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+  }
+  
 
 button {
     border: none;
     outline: none;
 }
-
-
-
-* {
-    background-color: rgba(221, 210, 234, 0.74);
-    background-image: url('dragon.jpg');
-    background-size: cover;
+#more-info{
+   font-style: inherit;
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 200%;
+font-weight: bold;
 }
+
+a{
+    font-style: inherit;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ font-size: 200%;
+ font-weight: bold;
+ color: black;
+ text-decoration: none;
+}
+
+  
 
 h1 {
     font-style: oblique;
@@ -72,7 +85,7 @@ h1 {
     box-sizing: border-box;
     cursor: pointer;
     margin: 6px;
-    color: rgb(28, 221, 228);
+    color: rgb(186, 231, 40);
     background-color: rgba(220, 20, 60, 0.76);
 }
 
