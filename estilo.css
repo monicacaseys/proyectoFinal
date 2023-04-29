@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+ 
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+
+.box {
+    width: 300px;
+    height: 200px;
+    background-color: lightgray;
+    border: 1px solid gray;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+
+
+* {
+    background-color: rgba(221, 210, 234, 0.74);
+    background-image: url('dragon.jpg');
+    background-size: cover;
+}
+
+h1 {
+    font-style: oblique;
+    font-family: fantasy;
+    color: blue;
+    text-align: center;
+    font-size: 300%;
+}
+
+#container {
+    width: 360px;
+    height: 360px;
+    margin: 0 auto;
+    border: 3px solid rgba(68, 0, 255, 0.945);
+    border-radius: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    border: 5px solid black;
+    border-radius: 22px;
+    text-align: center;
+    font-size: 3em;
+    line-height: 100px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 6px;
+    color: rgb(28, 221, 228);
+    background-color: rgba(220, 20, 60, 0.76);
+}
+
+.square:nth-child(3n+1) {
+    margin-left: 0;
+}
+
+.square:first-child:nth-child(3n+1) {
+    margin-left: 5px;
+}
+
+.square:nth-child(-n+3) {
+    margin-top: 5px;
+}
