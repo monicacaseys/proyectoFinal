@@ -31,6 +31,9 @@ body {
   }
   
 
+  element.style {
+   background-color: transparent;
+}
 button {
     border: none;
     outline: none;
@@ -71,6 +74,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    background-color: antiquewhite;
 
 }
 
