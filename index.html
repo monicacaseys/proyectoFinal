@@ -18,23 +18,29 @@
 <body class="foto">
     <h1>MONICA SEYS OLTRA</h1>
     <div class="container">
-        <div class="box">
-            <button id="more-info">MÁS INFORMACIÓN</button>
-            <script>
-                const moreInfoButton = document.getElementById('more-info');
-                moreInfoButton.addEventListener('click', () => {
-                    const message = '"¡Bienvenide! \n Monica Seys Oltra \t 1º DAW \nTema: Asociacion de gatos o Drags Race España"';
-                    alert(message);
-                });
-            </script>
-
+        <div class="box" onclick="showAlert()">
+            <div>
+                <button id="more-info">MÁS INFORMACIÓN</button>
+            </div>
         </div>
 
-        <div class="box">
-            <nav>
-                <a href="./juego.html">  JUGAR 3 EN RAYA  </a>
-            </nav>
+        <script>
+            function showAlert() {
+                const message = "¡Bienvenide! \n Monica Seys Oltra \t 1º DAW \nTema: Asociacion de gatos o Drags Race España";
+                alert(message);
+            }
+        </script>
+
+
+        <div class="box" onclick="window.location='./juego.html';" style="cursor:pointer;">
+            <a>
+                <div>
+                    JUGAR 3 EN RAYA
+                </div>
+            </a>
         </div>
+
+
     </div>
 </body>
 
