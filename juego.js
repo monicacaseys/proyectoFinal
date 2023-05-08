@@ -9,14 +9,20 @@ function unhighlightCell(cellId) {
 }
 
 const squares = document.querySelectorAll('.square');
-let symbols = ['', '', '', '', '', '', '', '', ''];
+let player1 = 'X';
+let player2 = 'O';
+let currentPlayer = player1;
 
 function drawSymbol(index) {
   const square = document.getElementById(index);
-  if (symbols[index] === '') {
-    square.textContent = '♘';
+  if (square.textContent === '') {
+    square.textContent = currentPlayer;
     square.style.fontWeight = 'bold';
-    symbols[index] = '♘';
+    if (currentPlayer === player1) {
+      currentPlayer = player2;
+    } else {
+      currentPlayer = player1;
+    }
     checkWin();
   }
 }
@@ -36,31 +42,28 @@ function checkWin() {
   for (let i = 0; i < rows.length; i++) {
     const row = rows[i];
     const col = columns[i];
-    if (symbols[row[0]] !== '' && symbols[row[0]] === symbols[row[1]] && symbols[row[1]] === symbols[row[2]]) {
-      alert('¡Has ganado! Si quieres volver a juagr te recomiendo que recargues la pagina');
+    if (squares[row[0]].textContent !== '' && squares[row[0]].textContent === squares[row[1]].textContent && squares[row[1]].textContent === squares[row[2]].textContent) {
+      alert(`¡${currentPlayer} ha ganado! Si quieres volver a jugar te recomiendo que recargues la página`);
       return;
     }
-    if (symbols[col[0]] !== '' && symbols[col[0]] === symbols[col[1]] && symbols[col[1]] === symbols[col[2]]) {
-      alert('¡Has ganado!Si quieres volver a juagar te recomiendo que recargues la pagina');
+    if (squares[col[0]].textContent !== '' && squares[col[0]].textContent === squares[col[1]].textContent && squares[col[1]].textContent === squares[col[2]].textContent) {
+      alert(`¡${currentPlayer} ha ganado! Si quieres volver a jugar te recomiendo que recargues la página`);
       return;
     }
   }
   for (let i = 0; i < diagonals.length; i++) {
     const diag = diagonals[i];
-    if (symbols[diag[0]] !== '' && symbols[diag[0]] === symbols[diag[1]] && symbols[diag[1]] === symbols[diag[2]]) {
-      alert('¡Has ganado!Si quieres volver a juagar te recomiendo que recargues la pagina');
+    if (squares[diag[0]].textContent !== '' && squares[diag[0]].textContent === squares[diag[1]].textContent && squares[diag[1]].textContent === squares[diag[2]].textContent) {
+      alert(`¡${currentPlayer} ha ganado! Si quieres volver a jugar te recomiendo que recargues la página`);
       return;
     }
   }
-  if (symbols[0] !== '' && symbols[0] === symbols[4] && symbols[4] === symbols[8]) {
-    alert('¡Has ganado!Si quieres volver a juagar te recomiendo que recargues la pagina');
+  if (squares[0].textContent !== '' && squares[0].textContent === squares[4].textContent && squares[4].textContent === squares[8].textContent) {
+    alert(`¡${currentPlayer} ha ganado! Si quieres volver a jugar te recomiendo que recargues la página`);
     return;
   }
-  if (symbols[2] !== '' && symbols[2] === symbols[4] && symbols[4] === symbols[6]) {
-    alert('¡Has ganado!Si quieres volver a juagar te recomiendo que recargues la pagina');
-    return;
+  if (squares[2].textContent !== '' && squares[2].textContent === squares[4].textContent && squares[4].textContent === squares[6].textContent) {
+    alert(`¡${currentPlayer} ha ganado! Si quieres volver a jugar te recomiendo que recargues la página`);
+   
   }
 }
-
-
-
