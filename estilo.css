@@ -67,9 +67,8 @@ a {
 h1 {
     font-style: oblique;
     font-family: fantasy;
-    color: blue;
     text-align: center;
-    font-size: 300%;
+ 
 }
 
 #container {
@@ -112,3 +111,64 @@ h1 {
 .square:nth-child(-n+3) {
     margin-top: 5px;
 }
+
+:root {
+    --colorNormal:black;
+    font-size:1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    /* ventajas del REM vs PX: funciona con el zoom
+    el navegador usa REM por defecto en 14 o 16 px dependiendo... */
+    
+}
+
+p, h1, h2, h3 {
+    color:var(--colorNormal);
+}
+
+#zonaModo{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    background-color: transparent;
+    }
+    
+    #dia,#noche{
+      /* para que se quede dentro de la zona del contenedor */
+      width: 100%;
+      /* para que arramnquen en el mismo punto y se carguen a la vez */
+      position: absolute;
+      top:0;
+      left:0;
+    }
+    #dia{
+        /* decision del diseñador, comi8enzo con el modo dia puesto */
+        display: none;
+    }
+    
+    /* Estilos para la sección de ajustes */
+    #menu {
+        background-color: rgba(100, 148, 237, 0.61);
+        position: fixed;
+        left: 20px; /* Ajusta la posición izquierda según necesites */
+        top: 20px; /* Ajusta la posición superior según necesites */
+        padding: 20px;
+    }
+    #menu p {
+        margin-bottom: 10px;
+    }
+
+    #menu button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    #menu button:hover {
+        background-color: #45a049;
+    }
+   

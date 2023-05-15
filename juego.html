@@ -9,7 +9,41 @@
 	<link rel="stylesheet" href="estilo.css">
 </head>
 
-<body>
+<body id="todo">
+	<div id="zonaModo">
+        <img id="noche" src="./luna.jpg" onclick="ponerModoNoche()">
+        <img id="dia" src="./sun.jpg" onclick="ponerModoDia()"> 
+    </div>
+	<div id="menu">
+        <p>Elija un Color</p>
+        <input type="color" name="colorElegido" />
+        <br />
+        <p>Elija la fuente base del documento</p>
+        <select name="tamFuente">
+            <option value="0.8">Pequeña</option>
+            <option value="1.0" selected="selected">Mediana</option>
+            <option value="1.4">Grande</option>
+        </select>
+        <button type="button" onclick="aplicarCambios()">APLICAR</button>
+    </div>
+
+    <script>
+        function aplicarCambios() {
+            // mostramos en consola los valores recogidos en la pagina
+            var color = document.getElementsByName('colorElegido')[0];
+            console.log('color elegido ' + color.value);
+
+            var tam = document.getElementsByName('tamFuente')[0];
+            var tamelegido = tam[tam.selectedIndex].value;
+
+            // aplicamos el color y el tamaño a todo el documento
+            document.documentElement.style.fontSize = parseFloat(tamelegido) + "rem";
+            document.documentElement.style.setProperty("--colorNormal", color.value);
+            document.getElementById('mensaje').innerHTML = "APLICADO";
+
+        }
+    </script>
+
 	<h1>Tres en raya</h1>
 	<div id="container">
 		<div class="square" id="0" onmouseenter="highlightCell('0')" onmouseleave="unhighlightCell('0')"
@@ -32,7 +66,7 @@
 			onclick="drawSymbol('8')"></div>
 	</div>
 	<script src="./juego.js"></script>
-
+	<script src="./dianoche.js"></script>
 
 
 </body>
